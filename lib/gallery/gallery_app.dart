@@ -1,4 +1,4 @@
-import 'package:firstapp/controller/snackbar_controller.dart';
+import 'package:firstapp/controller/snackbar.dart';
 import 'package:flutter/material.dart';
 
 class GalleryApp extends StatefulWidget {
@@ -32,27 +32,55 @@ class _GalleryAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Container(
-          color: Theme.of(context).accentColor,
-          child:
-//          Text(
-//            'Check new Gallery App...',
-//            style: Theme.of(context).textTheme.title,
-//          ),
-              SnackBarPage(text: 'Test SnackBar show'),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
+          title: Text('Tabs Demo'),
         ),
+        body: TabBarView(
+          children: [
+            Icon(Icons.directions_car),
+            Icon(Icons.directions_transit),
+            Icon(Icons.directions_bike),
+          ],
+        ),
+        backgroundColor: Colors.cyan,
+        floatingActionButton: Theme(
+            data: Theme.of(context).copyWith(accentColor: Colors.brown),
+            child: FloatingActionButton(
+              onPressed: null,
+              child: Icon(Icons.add),
+            )),
       ),
-      floatingActionButton: Theme(
-          data: Theme.of(context).copyWith(accentColor: Colors.brown),
-          child: FloatingActionButton(
-            onPressed: null,
-            child: Icon(Icons.add),
-          )),
     );
   }
+
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text(title),
+//      ),
+//      body: Center(
+//        child: Container(
+//          color: Theme.of(context).accentColor,
+//          child: SnackBarPage(text: 'Test SnackBar show'),
+//        ),
+//      ),
+//      floatingActionButton: Theme(
+//          data: Theme.of(context).copyWith(accentColor: Colors.brown),
+//          child: FloatingActionButton(
+//            onPressed: null,
+//            child: Icon(Icons.add),
+//          )),
+//    );
+//  }
 }

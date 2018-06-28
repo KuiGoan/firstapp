@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SnackBarPage extends StatelessWidget {
@@ -20,7 +19,6 @@ class SnackBarPage extends StatelessWidget {
               },
             ),
           );
-
           // Find the Scaffold in the Widget tree and use it to show a SnackBar!
           Scaffold.of(context).showSnackBar(snackBar);
         },
