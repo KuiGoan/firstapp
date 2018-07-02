@@ -1,4 +1,3 @@
-import 'package:firstapp/controller/snackbar.dart';
 import 'package:flutter/material.dart';
 
 class GalleryApp extends StatefulWidget {
@@ -32,6 +31,10 @@ class _GalleryAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    print('Test Share Preferences');
+    debugPrint('aaa');
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(
